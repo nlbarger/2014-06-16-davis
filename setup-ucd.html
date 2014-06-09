@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+      <title>Setup Instructions</title>
+    
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
+<link href="./css/bootstrap/bootstrap.css" rel="stylesheet" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link href="./css/bootstrap/bootstrap-responsive.css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="./css/swc.css" />
+<link rel="stylesheet" type="text/css" href="./css/swc-bootstrap.css" />
+<link rel="alternate" type="application/rss+xml" title="The Software Carpentry Blog" href="/feed.xml"/>
+<meta charset="UTF-8" />
+<meta http-equiv="last-modified" content="" />
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="./css/lesson.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="banner">
+  <a href="http://software-carpentry.org" title="Software Carpentry">
+    <img alt="Software Carpentry banner" src="./img/software-carpentry-banner.png" />
+  </a>
+</div>
+
+
+      <div class="row-fluid">
+        <div class="span10 offset1">
+	  <!-- start content -->
+          
+          <h1>Setup Instructions</h1>
+          
+          <p>These instructions are intended to help learners set up their computers.
+Instructors should go through them <em>before</em> class starts.
+For up-to-date information about software installation and configuration problems,
+and their solutions,
+see <a href="https://github.com/swcarpentry/bc/wiki/Configuration-Problems-and-Solutions">this wiki page</a>.</p>
+
+<h3>Overview</h3>
+
+<div class="row-fluid">
+  <div class="span6">
+    <h4>Editor</h4>
+    <p>
+      When you're writing code, it's nice to have a text
+      editor that is optimized for writing code, with features
+      like automatic color-coding of key words.
+      The default text editor on Mac OS X and Linux is usually set to Vim,
+      which is not famous for being intuitive.
+      if you accidentally find yourself stuck in it,
+      try typing the escape key,
+      followed by ':q!' (colon, lower-case 'q', exclamation mark),
+      then hitting Return
+      to return to the shell.
+    </p>
+    <h4>The Bash Shell</h4>
+    <p>
+      Bash is a commonly-used shell. Using a shell gives you
+      more power to do more tasks more quickly with your
+      computer.
+    </p>
+    <h4>Git</h4>
+    <p>
+      Git is a state-of-the-art version control system. It
+      lets you track who made changes to what when and has
+      options for easily updating a shared or public version of
+      your code on <a href="https://github.com/">github.com</a>.
+    </p>
+  </div>
+  <div class="span6">
+    <h4>R</h4>
+    <p>
+      R is a programming language that specializes in statistical
+      computing. It is a powerful tool for exploratory data analysis. To
+      interact with R, we will
+      use <a href="http://www.rstudio.com/">RStudio</a>, an interactive
+      development environment (IDE).
+    </p>
+    <h4>SQL</h4>
+    <p>
+      SQL is a specialized programming language used with databases.
+      We use a simple database manager called <a href="http://www.sqlite.org/">SQLite</a>,
+      either directly or through a browser plugin.
+    </p>
+  </div>
+</div>
+
+<h3>Windows</h3>
+
+<div class="row-fluid">
+  <div class="span6">
+    <h4>Git Bash</h4>
+    <p>
+      Install Git for Windows by download and running
+      <a href="https://msysgit.googlecode.com/files/Git-1.8.4-preview20130916.exe">the installer</a>.
+      This will provide you with both Git and Bash in the Git Bash program.
+  </p>
+  </div>
+  <div class="span6">
+    <h4>Editor</h4>
+    <p>
+      <a href="http://notepad-plus-plus.org/">Notepad++</a> is a
+      popular free code editor for Windows.
+      Be aware that you must add its installation directory to your system path
+      in order to launch it from the command line
+      (or have other tools like Git launch it for you).
+      Please ask your instructor to help you do this.
+    </p>
+    <h4>R</h4>
+    <p>
+      Install R by downloading and running
+      <a href="http://cran.r-project.org/bin/windows/base/release.htm">this .exe file</a>
+      from <a href="http://cran.r-project.org/index.html">CRAN</a>.
+      Also, please install the
+      <a href="http://www.rstudio.com/ide/download/desktop">RStudio IDE</a>.
+    </p>
+    <h4>SQLite</h4>
+    <p>
+      Download the <a href="http://files.software-carpentry.org/sqlite3.exe">sqlite3 program</a>
+      and put it in the directory where you are running examples.
+      Alternatively,
+      you may install the Firefox SQLite browser plugin described <a href="#firefox-sqlite">below</a>.
+    </p>
+  </div>
+</div>
+
+<h3>Mac OS X</h3>
+
+<div class="row-fluid">
+  <div class="span6">
+    <h4>Bash</h4>
+    <p>
+      The default shell in all versions of Mac OS X is bash,
+      so no need to install anything.  You access bash from
+      the Terminal (found
+      in <code>/Applications/Utilities</code>).  You may want
+      to keep Terminal in your dock for this workshop.
+    </p>
+    <h4>Editor</h4>
+    <p>
+      We recommend
+      <a href="http://www.barebones.com/products/textwrangler/">Text Wrangler</a> or
+      <a href="http://www.sublimetext.com/">Sublime Text</a>.
+      In a pinch, you can use <code>nano</code>,
+      which should be pre-installed.
+    </p>
+    <h4>Git</h4>
+    <p>
+      Install Git for Mac by downloading and running
+      <a href="http://git-scm.com/downloads">the installer</a>.  For older
+      versions of OS X (10.5-10.7) use the most recent available
+      installer <a href="https://code.google.com/p/git-osx-installer/downloads/list">available
+      here</a>. Use the Leopard installer for 10.5 and the Snow Leopard
+      installer for 10.6-10.7.
+    </p>
+  </div>
+  <div class="span6">
+    <h4>R</h4>
+    <p>
+      Install R by downloading and running
+      <a href="http://cran.r-project.org/bin/macosx/R-latest.pkg">this .pkg file</a>
+      from <a href="http://cran.r-project.org/index.html">CRAN</a>.
+      Also, please install the
+      <a href="http://www.rstudio.com/ide/download/desktop">RStudio IDE</a>.
+    </p>
+    <h4>SQLite</h4>
+    <p>
+      <code>sqlite3</code> comes pre-installed on Mac OS X.
+      Alternatively,
+      you may install the Firefox SQLite browser plugin described <a href="#firefox-sqlite">below</a>.
+    </p>
+  </div>
+</div>
+
+<h3>Linux</h3>
+
+<div class="row-fluid">
+  <div class="span6">
+    <h4>Bash</h4>
+    <p>
+      The default shell is usually <code>bash</code>,
+      but if your machine is set up differently
+      you can run it by opening a terminal and typing <code>bash</code>.
+      There is no need to install anything.
+    </p>
+    <h4>Git</h4>
+    <p>
+      If Git is not already available on your machine you can try
+      to install it via your distro's package manager
+      (e.g. <code>apt-get</code>).
+    </p>
+    <h4>Editor</h4>
+    <p>
+      <a href="http://kate-editor.org/">Kate</a> is one option for Linux users.
+      In a pinch, you can use <code>nano</code>,
+      which should be pre-installed.
+    </p>
+    <h4>R</h4>
+    <p>
+      You can download the binary files for your distribution
+      from <a href="http://cran.r-project.org/index.html">CRAN</a>. Or
+      you can use your package manager, e.g. for Debian/Ubuntu
+      run <code>apt-get install r-base</code>. Also, please install
+      the
+      <a href="http://www.rstudio.com/ide/download/desktop">RStudio IDE</a>.
+    </p>
+    <h4>SQLite</h4>
+    <p>
+      <code>sqlite3</code> comes pre-installed on Linux.
+      Alternatively,
+      you may install the Firefox SQLite browser plugin described <a href="#firefox-sqlite">below</a>.
+    </p>
+  </div>
+  <div class="span6"></div>
+</div>
+
+<h3>&nbsp;</h3>
+<div class="row-fluid">
+  <div class="span6">  </div>
+</div>
+
+
+	  <!-- end content -->
+	</div>
+      </div>
+
+      <div class="footer">
+  <a class="label swc-blue-bg" href="https://www.facebook.com/SoftwareCarpentry">Facebook</a>
+  <a class="label swc-blue-bg" href="https://plus.google.com/+Software-carpentryOrg">Google+</a>
+  <a class="label swc-blue-bg" href="https://twitter.com/swcarpentry">Twitter</a>
+  <a class="label swc-blue-bg" href="https://github.com/swcarpentry">GitHub</a>
+  <a class="label swc-blue-bg" href="http://software-carpentry.org/feed.xml">RSS</a>
+  <a class="label swc-blue-bg" href="./LICENSE.html">License</a>
+  <a class="bugreport label swc-blue-bg" href="mailto:info@software-carpentry.org?subject=bug%20in%20setup.md">Bug Report</a>
+</div>
+
+    </div>
+    <!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="./js/jquery-1.9.1.min.js"></script>
+<script src="./js/bootstrap/bootstrap.min.js"></script>
+
+  </body>
+</html>
