@@ -2,7 +2,7 @@
 layout: bootcamp
 root: .
 venue: UC Davis
-address: UCDavis Library and UAW Local 5810
+address: UCDavis Shields Library
 country: United-States
 humandate: Jun 16-17, 2014
 humantime: 8:30 am - 5:00 pm
@@ -64,11 +64,7 @@ contact: admin@software-carpentry.org
 <p>
   <strong>Where:</strong>
   {{ page.address }}.
-  Get directions with
-  <a href="http://www.openstreetmap.org/?mlat={{ page.latlng | replace:',','&mlon=' }}&zoom=16">OpenStreetMap</a>
-  or
-  <a href="http://maps.google.com/maps?q={{ page.latlng }}">Google Maps</a>.
-</p>
+Get directions with <a href="http://maps.google.com/maps?q={{ page.latlng }}">Google Maps</a>. <a href="map-shields-2.png">Click here for Shield's Second Floor room map</a>. </p>
 {% endif %}
 
 <!--
