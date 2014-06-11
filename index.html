@@ -2,15 +2,16 @@
 layout: bootcamp
 root: .
 venue: UC Davis
-address: TBD
+address: UCDavis Shields Library
 country: United-States
 humandate: Jun 16-17, 2014
-humantime: 9:00 am - 4:30 pm
+humantime: 8:30 am - 5:00 pm
 startdate: 2014-06-16
 enddate: 2014-06-17
-latlng: 41.7901128,-87.6007318
+latlng: 38.5397144,-121.7490892
 registration: restricted
-instructor: ["Naupaka Zimmerman", "Bernhard Konrad"]
+eventbrite: "11471139487"
+instructor: ["Naupaka Zimmerman", "Bernhard Konrad", "Dav Clark", "Andrea Zonca"]
 contact: admin@software-carpentry.org
 ---
 <!--
@@ -63,11 +64,7 @@ contact: admin@software-carpentry.org
 <p>
   <strong>Where:</strong>
   {{ page.address }}.
-  Get directions with
-  <a href="http://www.openstreetmap.org/?mlat={{ page.latlng | replace:',','&mlon=' }}&zoom=16">OpenStreetMap</a>
-  or
-  <a href="http://maps.google.com/maps?q={{ page.latlng }}">Google Maps</a>.
-</p>
+Get directions with <a href="http://maps.google.com/maps?q={{ page.latlng }}">Google Maps</a>. <a href="map-shields-2.png" target="new">Click here for Shield's Second Floor room map</a>. </p>
 {% endif %}
 
 <!--
@@ -99,22 +96,131 @@ contact: admin@software-carpentry.org
 <!--
     Edit this block to show the syllabus and schedule for your bootcamp.
 -->
-<h2>Schedule</h2>
+<h2> Monday Schedule </h2>
 
-<table class="table table-striped">
-  <tr> <td>Monday</td>  <td>09:00</td>  <td>Introduction to task automation with the Unix shell</td> </tr>
-  <tr> <td></td>        <td></td>       <td>Coffee will be served at 10:30.</td> </tr>
-  <tr> <td></td>        <td>12:00</td>  <td>Lunch break</td> </tr>
-  <tr> <td></td>        <td>13:00</td>  <td>Building programs with Python</td> </tr>
-  <tr> <td></td>        <td></td>       <td>Coffee will be served at 14:30.</td> </tr>
-  <tr> <td></td>        <td>16:00</td>  <td>Wrap-up</td> </tr>
-  <tr> <td>Tuesday</td> <td>09:00</td>  <td>Version control with Git</td> </tr>
-  <tr> <td></td>        <td></td>       <td>Coffee will be served at 10:30.</td> </tr>
-  <tr> <td></td>        <td>12:00</td>  <td>Lunch break</td> </tr>
-  <tr> <td></td>        <td>13:00</td>  <td>Managing data with SQL</td> </tr>
-  <tr> <td></td>        <td></td>       <td>Coffee will be served at 14:30.</td> </tr>
-  <tr> <td></td>        <td>15:00</td>  <td>Putting it all together</td> </tr>
-  <tr> <td></td>        <td>16:00</td>  <td>Wrap-up</td> </tr>
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f0f0f0;}
+.tg .tg-0ord{text-align:right}
+.tg .tg-e3zv{font-weight:bold}
+.tg .tg-07dj{font-weight:bold;font-size:14px}
+</style>
+
+<table class="tg">
+  <tr>
+    <th class="tg-031e"></th>
+    <th class="tg-031e"><strong>Lannister Group @ Nelle Branch</strong><br />
+						<strong>Instructors:</strong> Naupaka and Andrea<br />
+						<strong>Helpers:</strong> Noam and Ciera</th>
+    <th class="tg-031e"><strong>Baratheon Group @ LIR</strong><br />
+						<strong>Instructors:</strong> Dav and Bernhard<br />
+						<strong>Helpers:</strong> Jonathan and Dave</th>
+  </tr>
+  <tr>
+    <td class="tg-0ord">8:30 - 9:00 am</td>
+    <td class="tg-031e">Setup help<br />Intro to the post-doc union and library</td>
+    <td class="tg-031e">Setup help<br />Intro to the post-doc union and library</td>
+  </tr>
+  <tr>
+    <td class="tg-0ord">9:00 - 10:15 am</td>
+    <td class="tg-e3zv">Basics of the R working environment and language</td>
+    <td class="tg-e3zv">Care and feeding of R objects, Functions</td>
+  </tr>
+  <tr>
+    <td class="tg-0ord">10:15 - 10:45 am</td>
+    <td class="tg-031e">coffee break</td>
+    <td class="tg-031e">coffee break</td>
+  </tr>
+  <tr>
+    <td class="tg-0ord">10:45 am - 12:00 pm</td>
+    <td class="tg-e3zv">Care and feeding of R objects, Functions</td>
+    <td class="tg-e3zv">Unit Testing/Code Coverage</td>
+  </tr>
+  <tr>
+    <td class="tg-0ord">12:00 - 1:00 pm</td>
+    <td class="tg-031e">lunch on your own</td>
+    <td class="tg-031e">lunch on your own</td>
+  </tr>
+  <tr>
+    <td class="tg-0ord">1:00 - 2:15 pm</td>
+    <td class="tg-e3zv">Writing functions, Intro to data munging</td>
+    <td class="tg-e3zv">Writing functions, Intro to data munging</td>
+  </tr>
+  <tr>
+    <td class="tg-0ord">2:15 - 2:45 pm</td>
+    <td class="tg-031e">light refreshments available</td>
+    <td class="tg-031e">light refreshments available</td>
+  </tr>
+  <tr>
+    <td class="tg-0ord">2:45 - 5:00 pm</td>
+    <td class="tg-e3zv">Making figures with ggplot2</td>
+    <td class="tg-07dj">Making figures with ggplot2</td>
+  </tr>
+    <tr>
+    <td class="tg-0ord">5:30 - 8:00 pm</td>
+    <td class="tg-e3zv" colspan="2">BBQ Dinner Social, Location TBD. Open to all</td>
+  </tr>
+  <tr>
+    <td class="tg-031e" colspan="3">times approximate, but there will always be two sessions before lunch and two after</td>
+  </tr>
+</table>
+
+<h2> Tuesday Schedule </h2>
+
+<table class="tg">
+  <tr>
+    <th class="tg-031e"></th>
+    <th class="tg-031e"><strong>Lannister Group @ LIR</strong><br />
+						<strong>Instructors:</strong> Naupaka and Andrea<br />
+						<strong>Helpers:</strong> Noam and Ciera</th>
+    <th class="tg-031e"><strong>Baratheon Group @ Nelle Branch</strong><br />
+						<strong>Instructors:</strong> Dav and Bernhard<br />
+						<strong>Helpers:</strong> Jonathan and Dave</th>
+  </tr>
+  <tr>
+    <td class="tg-0ord">8:30 - 9:00 am</td>
+    <td class="tg-031e">Setup help</td>
+    <td class="tg-031e">Setup help</td>
+  </tr>
+  <tr>
+    <td class="tg-0ord">9:00 - 10:15 am</td>
+    <td class="tg-e3zv">Shell, file manipulation</td>
+    <td class="tg-e3zv">Shell, file manipulation</td>
+  </tr>
+  <tr>
+    <td class="tg-0ord">10:15 - 10:45 am</td>
+    <td class="tg-031e">coffee break</td>
+    <td class="tg-031e">coffee break</td>
+  </tr>
+  <tr>
+    <td class="tg-0ord">10:45 am - 12:00 pm</td>
+    <td class="tg-e3zv">Intro to Version Control</td>
+    <td class="tg-e3zv">Intro to Version Control</td>
+  </tr>
+  <tr>
+    <td class="tg-0ord">12:00 - 1:00 pm</td>
+    <td class="tg-031e">lunch on your own</td>
+    <td class="tg-031e">lunch on your own</td>
+  </tr>
+  <tr>
+    <td class="tg-0ord">1:00 - 2:15 pm</td>
+    <td class="tg-e3zv">The shell cont'd and Version control, cont'd</td>
+    <td class="tg-e3zv">The shell cont'd and Version control, cont'd</td>
+  </tr>
+  <tr>
+    <td class="tg-0ord">2:15 - 2:45 pm</td>
+    <td class="tg-031e">light refreshments available</td>
+    <td class="tg-031e">light refreshments available</td>
+  </tr>
+  <tr>
+    <td class="tg-0ord">2:45 - 5:00 pm</td>
+    <td class="tg-e3zv">Creating workflows and automated pipelines, knitr</td>
+    <td class="tg-07dj">Creating workflows and automated pipelines, knitr</td>
+  </tr>
+  <tr>
+    <td class="tg-031e" colspan="3">times approximate, but there will always be two sessions before lunch and two after</td>
+  </tr>
 </table>
 
 <hr/>
@@ -130,8 +236,34 @@ contact: admin@software-carpentry.org
   To participate in a Software Carpentry bootcamp, 
   you will need working copies of the software described below.
   Please make sure to install everything
-  (or at least to download the installers)
   <em>before</em> the start of your bootcamp.
 </p>
 
-{% include setup.html %}
+<p>
+  TL;DR version: make sure you have the Bash shell, Git, R, and RStudio. For detailed instructions, go <a href="{{page.root}}/setup-ucd.html">here</a>.
+</p>
+
+<h4>The Bash Shell</h4>
+    <p>
+      Bash is a commonly-used shell. Using a shell gives you
+      more power to do more tasks more quickly with your
+      computer.
+    </p>
+
+<h4>Git</h4>
+    <p>
+      Git is a state-of-the-art version control system. It
+      lets you track who made changes to what when and has
+      options for easily updating a shared or public version of
+      your code on <a href="https://github.com/">github.com</a>.
+    </p>
+
+<h4>R</h4>
+    <p>
+      <a href="http://www.r-project.org">R</a> is a programming language that
+      is especially powerful for data exploration, visualization, and
+      statistical analysis. To interact with R, we will
+        use <a href="http://www.rstudio.com/">RStudio</a>, an interactive
+        development environment (IDE).
+      
+<hr/>
