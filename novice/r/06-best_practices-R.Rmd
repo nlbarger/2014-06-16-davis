@@ -1,4 +1,5 @@
-```{r, echo=FALSE}
+```{r, echo=FALSE, message=FALSE}
+require('knitr')
 opts_chunk$set(results='hide')
 ```
 # Some best practices for using R and designing programs
