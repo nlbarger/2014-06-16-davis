@@ -29,6 +29,8 @@ Let's start by learning about our tool.
 
 _Point out the different windows in R._ 
 
+Compare R in RStudio to R on the command line. Point out why it's nice to have all the extra views into what you're working on.
+
 * Console, Scripts, Environments, Plots
 * Avoid using shortcuts. 
 * Code and workflow is more reproducible if we can document everything that we do.
@@ -98,7 +100,7 @@ update.packages(ask = FALSE)
 
 The RStudio GUI option for updating packages is also quite useful, but it's good to know how to do it in a script so you can make sure it's done automatically.
 
-## Data types and structures
+## Data types
 
 __Understanding basic data types in R__
 
@@ -116,7 +118,7 @@ R has 6 (although we will not discuss the raw class for this workshop) atomic cl
 * logical
 * complex
 
-__Example	Type__
+__Example Type__
 
 * “a”, “swc”	character
 * 2, 15.5	numeric
@@ -143,7 +145,7 @@ z <- c(1L, 2L, 3L)
 typeof(z)
 ```
 
-# R Objects / Data Structure
+## Data Structures
 
 R has many different structures for storing the data you want to
 analyze. The most commonly used are
@@ -202,7 +204,7 @@ You can also use the `:` operator or the `seq` function:
 seq(from = 5, to = 25, by = 5)
 ```
 
-### Factors
+## Factors
 Factor is a special type of vector to store categorical values.
 
 ```{r}
