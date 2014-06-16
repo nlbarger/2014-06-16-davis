@@ -53,7 +53,7 @@ But before we do that, let's talk about how to format your data to load into R.
 
 
 ```{r, eval=FALSE}
-setwd("pathname")
+setwd("~/git//2014-06-16-davis/Lannister_Group/Day_01_Monday/01_Morning/")
 read.csv("data/inflammation-01.csv")
 ```
 
@@ -148,7 +148,7 @@ What happens here is that we take the original vector weights, and we are adding
 Now that we know how to assign things to variables, let's re-run `read.csv` and save its result:
 
 ```{r}
-dat <- read.csv('data/inflammation-01.csv', header = FALSE)
+dat <- read.csv('data/inflammation-01.csv')
 ```
 
 This statement doesn't produce any output because assignment doesn't display anything. If we want to check that our data has been loaded, we can print the variable's value:
