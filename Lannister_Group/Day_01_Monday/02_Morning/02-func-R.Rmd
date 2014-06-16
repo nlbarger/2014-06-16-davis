@@ -258,7 +258,7 @@ It's hard to tell from the default output whether the result is correct, but the
 paste('original min, mean, and max are:', min(datamatrix), ',', mean(datamatrix), ',', max(datamatrix))
 centered <- center(datamatrix, 0)
 
-paste('original min, mean, and max are:', min(centered), ',', mean(centered), ',', max(centered))
+paste('centered min, mean, and max are:', min(centered), ',', mean(centered), ',', max(centered))
 ```	
 
 That seems almost right: the original mean was about 6.1, so the lower bound from zero is how about -6.1. The mean of the centered data isn't quite zero—we'll explore why not in the challenges—but it's pretty close. We can even go further and check that the standard deviation hasn't changed:
