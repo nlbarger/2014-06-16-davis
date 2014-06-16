@@ -21,6 +21,7 @@ tDat
 ## reshape2 -- worth learning for future
 library(reshape2)
 library(plyr) # to use '.' to quote an expression
+
 tmp <- acast(subset(gDat,
                     subset = country %in% c("Cambodia", "Canada", "Rwanda")),
              year ~ country, value.var = "lifeExp")
@@ -56,77 +57,26 @@ aggregate(country ~ continent, gDat, function(x) length(unique(x)))
 ## exercise
 ## compute the min and max of gdpPercap by country for 4 countries of your choice
 
-## let's develop a few more challenges on the fly
+# reshape2: melt and cast
 
-## compute on a data.frame, split out by a factor
-## install.packages("plyr", dependencies = TRUE)
-library(plyr)
+# won't work if we load with row.names in first column, and we want these to be their own column for melting anyway
+inflam <- read.csv("data/inflammation-01-metadata-rich.csv", header=TRUE, row.names=1)
 
-## let's run linear regression of lifeExp on year for individual countries and
-## save the estimated intercept and slope
+# so we load it without row names and it works fine
+inflam <- read.csv("data/inflammation-01-metadata-rich.csv", header=TRUE)
+inflam.melted <- melt(inflam) #this works
 
-## hey! we already wrote this function!
+# but this is more specific
+inflam.melted <- melt(inflam, variable.name="Day", value.name="inflammation_level")
 
-## walk before you run .... and make a plot first!
-library(ggplot2)
-ggplot(subset(gDat, country == "Zimbabwe"),
-       aes(x = year, y = lifeExp)) +
-  geom_point() + geom_smooth(se = FALSE, method = "lm")
+dcast(inflam.melted, PatientID ~ Day) # getting back our starting data set
 
-lm(lifeExp ~ year, gDat, subset = country == "Zimbabwe")
-lm(lifeExp ~ I(year - 1952), gDat, subset = country == "Zimbabwe")
+dcast(inflam.melted, FavColor ~ Treatment, sum) # but we can really do all kinds of stuff here... including arbitrary functions...
+dcast(inflam.melted, FavColor ~ Treatment + Coast, sum) 
+dcast(inflam.melted, FavColor ~ Treatment + Coast, mean) #can't divide by zero, so get NaNs 
 
-## copy and paste function from previous session
-jFun <- function(x, shift = 1952) {
-  fit <- lm( lifeExp ~ I(year - shift), data = x)
-  fit.coef <- coef(fit)
-  names(fit.coef) <- c("intercept","slope")
-  return(fit.coef)
-}
 
-## test your function!
-jFun(subset(gDat, country == "Zimbabwe"))
+# but we can really do all kinds of stuff here... including arbitrary functions...
+return_YES <- function(x){"YES"}
 
-## scale up:
-## let ddply to handle all the booking keeping, i.e. managing the loop over
-## countries
-gCoef <- ddply(gDat, ~ country, jFun)
-str(gCoef)
-tail(gCoef)
-
-## I wish that I also had the continent info
-
-## easiest:
-## sort of a trick: add continent to the ddply call
-gCoef <- ddply(gDat, ~ country + continent, jFun)
-str(gCoef)
-tail(gCoef)
-
-## optional:
-## some exploration of slopes
-ggplot(gCoef, aes(x = intercept, y = slope)) + geom_point()
-ggplot(gCoef, aes(x = intercept, y = slope, color = continent)) + geom_point()
-ggplot(gCoef, aes(x = continent, y = slope)) + 
-  geom_jitter(position = position_jitter(width = 0.1))
-
-## data aggregation activities to leave many file behind as fodder for shell
-## session
-
-d_ply(gDat, ~ country, function(z) {
-  the_country <- z$country[1]
-  the_continent <- z$continent[1]
-  
-  the_filename <- paste0(the_continent, "_", the_country, ".tsv")
-  write.table(z, file = the_filename,
-              quote = FALSE, sep = "\t", row.names = FALSE)
-  
-  the_filename <- paste0(the_continent, "_", the_country, ".png")
-  ggplot(z, aes(x = year, y = lifeExp)) +
-    geom_point() + geom_smooth(se = FALSE, method = "lm") +
-    ggtitle(the_country)
-  ggsave(the_filename)
-})
-
-file.remove(Sys.glob(paste0(unique(with(gDat,
-                                        paste0(continent, "_",
-                                               country))),".*")))
+dcast(inflam.melted, FavColor ~ Treatment + Coast, return_YES) 
