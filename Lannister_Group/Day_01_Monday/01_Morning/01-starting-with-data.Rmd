@@ -50,11 +50,20 @@ We will use `setwd()` and `read.csv()`. These are built-in functions in R. Let's
 * put it in your working directory for these exercises
 
 But before we do that, let's talk about how to format your data to load into R.
+See `data/inflammation-01-broken.csv`
 
+Fix:
+
+* NA vs N/A vs empty cells
+* notes off in nowhere land
+* letter O instead of 0
+* Column names vs categories
+* `row.names` in first column can't start with a number
+* Need to have same number of elements in each column or R will fill in with NAs
 
 ```{r, eval=FALSE}
-setwd("~/git//2014-06-16-davis/Lannister_Group/Day_01_Monday/01_Morning/")
-read.csv("data/inflammation-01.csv")
+setwd("your_working_directory")
+read.csv("data/inflammation-01.csv", header=TRUE)
 ```
 
 The expression `read.csv()` is a function call that asks R to run the function read.csv that belongs to base R. 
@@ -71,6 +80,7 @@ Our call to `read.csv` read our file, but didn't save the data in memory.
 To do that, we need to assign the data frame to a variable. 
 A variable is just a name for a value, such as x, current_temperature, or subject_id. 
 We can create a new variable simply by assigning a value to it using `=` or `<-`
+But we should always use `<-` as a best practice.
 
 ```{r}
 weight_kg <- 55
@@ -136,22 +146,23 @@ age  <- age - 20
 ```
 
 We can also add to variable that are vectors, and update them by making them longer. 
-For example, if we are creating a vector of patient weights, we could update that vector using `append`. `append` takes two arguments, and adds the second item to the end of the first one.
+For example, if we are creating a vector of patient weights, we could update that vector using `c`. `c` takes some arguments, and adds the second item to the end of the first one.
 
 ```{r}
 weights <- c(100)
-weights <- append(weights, 80)
+weights <- c(weights, 80)
 ```
 
 What happens here is that we take the original vector weights, and we are adding the second item to the end of the first one. We can do this over and over again to build a vector or a dataset. As we program, this may be useful to autoupdate results that we are collecting or calculating.
 
 Now that we know how to assign things to variables, let's re-run `read.csv` and save its result:
+Notice this time that we've added `row.names=1` to tell R that the first column represents row names.
 
 ```{r}
-dat <- read.csv('data/inflammation-01.csv', row.names=1)
+dat <- read.csv('data/inflammation-02.csv', header=TRUE, row.names=1)
 ```
 
-This statement doesn't produce any output because assignment doesn't display anything. If we want to check that our data has been loaded, we can print the variable's value:
+This statement doesn't produce any output because assignment doesn't display anything. If we want to check that our data has been loaded, we can print the variable's value, or look at it in the variable browser in RStudio:
 
 ```{r}
 dat
@@ -161,7 +172,6 @@ __BREAK__
 * Make sure everyone has imported the data
 * tell me how many rows and columns there are
 * what kind of data is it?
-
 
 ## Manipulating Data
 
@@ -188,7 +198,7 @@ Some additional information on data frames:
 * Coercion will be forced and not always what you expect.
 * Can also create with `data.frame()` function.
 * Find the number of rows and columns with `nrow(dat)` and `ncol(dat)`, respectively.
-* Rownames are usually 1..n.
+* Rownames are usually 1..n but you can also set them as we did when you load the data or later with the `row.names()` function.
 
 __Useful functions__
 
@@ -216,11 +226,16 @@ This tells us that data has 60 rows and 40 columns.
 ### Indexing
 
 If we want to get a single value from the data frame, 
-we must provide an index in square brackets, just as we do in math:
+we must provide an index in square brackets, just as we do in math (rows, columns).
+We can also use the column name to pull out a specific value.  Think about what each operation is returning,
+i.e. `dat$Day20` returns a linear vector.
 
 ```{r}
 paste('first value in data:', dat[1,1])
 paste('middle value in data:', dat[30,20])
+dat$Day20
+str(dat$Day20)
+dat$Day20[30]
 ```
 
 R indexes starting at 1. Programming languages like Fortran, MATLAB, and R start counting at 1, because that's what human beings have done for thousands of years. 
@@ -310,10 +325,11 @@ Lets convert our data frame to a matrix, but give it a new name:
 datamatrix <- as.matrix(dat)
 ```
 
-And then take the mean of all the values:
+And then take the mean of all the values (compare to mean of data.frame, which gives an error):
 
 ```{r}
 mean(datamatrix)
+mean(dat)
 ```
 
 There are lots of useful built-in commands that we can use in R:
@@ -328,7 +344,10 @@ When analyzing data, though, we often want to look at partial statistics, such a
 One way to do this is to select the data we want to create a new temporary array, then ask it to do the calculation:
 
 ```{r}
-patient_1 <- dat[1, ] # first row, all of the columns
+patient_1 <- dat[1,] # first row, all of the columns
+patient_1
+patient_1 <- dat["P1",]
+patient_1
 paste('maximum inflammation for patient 1:', max(patient_1))
 ```
 
@@ -336,7 +355,7 @@ We don't actually need to store the row in a variable of its own.
 Instead, we can combine the selection and the method call:
 
 ```{r}
-paste('maximum inflammation for patient 2:', max(dat[2,]))
+paste('maximum inflammation for patient 2:', max(dat["P2",]))
 ```
 
 __EXERCISES__
