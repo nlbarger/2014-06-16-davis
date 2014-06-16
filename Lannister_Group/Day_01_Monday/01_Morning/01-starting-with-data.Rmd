@@ -148,7 +148,7 @@ What happens here is that we take the original vector weights, and we are adding
 Now that we know how to assign things to variables, let's re-run `read.csv` and save its result:
 
 ```{r}
-dat <- read.csv('data/inflammation-01.csv')
+dat <- read.csv('data/inflammation-01.csv', row.names=1)
 ```
 
 This statement doesn't produce any output because assignment doesn't display anything. If we want to check that our data has been loaded, we can print the variable's value:
@@ -377,49 +377,42 @@ max_inflammation = apply(dat, 2, max)
 We can also create a vector of our study days (the number of columns in data)
 
 ```{r}
-tempo = c(1:40)
+days = c(1:40)
 #or
-tempo = c(1:ncol(dat))
+days = c(1:ncol(dat))
 ```
 
-Notice that the object was named `tempo` instead of `time`. `time` is a R built-in function, and as good practice avoid giving existing function names to your objects. 
+Notice that the object was named `days` instead of `time`. `time` is a R built-in function, and as good practice avoid giving existing function names to your objects. 
 
 Now that we have all this summary information, we can put it back together into a data frame that we can use for further analysis and plotting, provided they are the same length.
 
 
 ```{r}
-d.summary = data.frame(tempo, avg_inflammation, min_inflammation, max_inflammation)
+d.summary = data.frame(days, avg_inflammation, min_inflammation, max_inflammation)
 ```
 
 ## Plotting  
-The mathematician Richard Hamming once said, "The purpose of computing is insight, not numbers," and the best way to develop insight is often to visualize data. Visualization deserves an entire lecture (or course) of its own, but we can explore a few features of R's base plotting package and ggplot2 here. 
+The mathematician Richard Hamming once said, "The purpose of computing is insight, not numbers," and the best way to develop insight is often to visualize data. Visualization deserves an entire lecture (or course) of its own, but we can explore a few features of R's base plotting package here. 
 
 Lets use the average inflammation data that we saved and plot it over the study time. 
 
 ```{r}
-plot(tempo, avg_inflammation)
+plot(days, avg_inflammation)
 ```
 
 The result is roughly a linear rise and fall, which is suspicious: based on other studies, we expect a sharper rise and slower fall. Let's have a look at two other statistics:
 
 ```{r}
-plot(tempo, max_inflammation)
-plot(tempo, min_inflammation)
+plot(days, max_inflammation)
+plot(days, min_inflammation)
 ```
 
-The maximum value rises and falls perfectly smoothly, while the minimum seems to be a step function. Neither result seems particularly likely, so either there's a mistake in our calculations or something is wrong with our data.
-
-```{r}
-library(ggplot2)
-ggplot(d.summary, aes(tempo, avg_inflammation)) + geom_point()
-```
+The maximum value rises and falls perfectly smoothly, while the minimum seems to be a step function. Neither result seems particularly likely, so either there's a mistake in our calculations or something is wrong with our data. Luckily this is made-up data, and we made it that way, so no worries.
 
 __EXERCISES__
 
 1. Create a plot showing the standard deviation of the inflammation data 
 for each day across all patients.
-
-2. Create a ggplot that shows the data as a line. As a histogram. etc.
 
 ## Key Points
 
