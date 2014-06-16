@@ -1,0 +1,17 @@
+Data Manipulation
+=================
+author: Dav Clark @ UC Davis
+date: June 16-17
+
+
+Data Libraries
+==============
+
+There are a number of libraries for manipulating data. The community seems to agree the the following are the best place for new users to start:
+
+- `plyr`
+  - http://plyr.had.co.nz/
+- `reshape2`
+  - `acast`, `dcast`
+  
+http://www.cookbook-r.com/Manipulating_data/
