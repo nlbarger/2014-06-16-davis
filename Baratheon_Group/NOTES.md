@@ -10,6 +10,10 @@ http://jennybc.github.io/2014-05-12-ubc/ubc-r/
 Bernhard will start with creating a project, and will have folks read the
 dataset.
 
+http://tinyurl.com/berkeley-climate
+(which points to https://raw.githubusercontent.com/BernhardKonrad/2014-06-16-davis/gh-pages/Baratheon_Group/data/berkeley-climate.csv)
+
+
 Also get into basics of functions
 
 02 - Unit Testing/Code Coverage
