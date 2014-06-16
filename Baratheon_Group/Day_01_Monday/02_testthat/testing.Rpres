@@ -1,0 +1,57 @@
+Testing
+=======
+author: Dav Clark @ UC Davis
+date: June 16-17
+
+testthat
+========
+
+One of *many* excellent libraries from Hadley Wickam to make highly readable tests.
+
+- http://adv-r.had.co.nz/Testing.html
+- https://github.com/hadley/testthat
+
+So what's a test?
+
+A trivial example
+=================
+
+Ensure that a function returns `TRUE`. 
+
+```{r}
+require(testthat)
+
+my_trivial_function <- function() TRUE
+
+test_that(
+  "my trivial function returns TRUE", 
+  {
+    # Braces not actually needed
+    # for a single expression...
+    expect_that(my_trivial_function(), 
+                equals(TRUE))
+  }
+)
+```
+
+(I'm not sure how to actually test a knitr doc, though)
+
+Less Verbosity
+==============
+
+Some people (like me) don't buy as much into the "BDD" mindset (cf. Ruby's RSpec):
+
+```{r}
+require(testthat)
+
+my_trivial_function <- function() TRUE
+
+test_that(
+  "my trivial function returns TRUE", 
+  {
+    # Braces not actually needed
+    # for a single expression...
+    expect_true(my_trivial_function())
+  }
+)
+```

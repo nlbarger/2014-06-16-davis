@@ -1,4 +1,5 @@
-```{r, echo=FALSE}
+```{r, echo=FALSE, message=FALSE}
+require('knitr')
 opts_chunk$set(results='hide')
 ```
 # Analyzing Patient Data
@@ -32,7 +33,7 @@ To do all that, we'll have to learn a little bit about programming.
 * Perform operations on arrays of data.
 * Display simple graphs.
 
-## Loading Data
+Loading Data
 ----------------
 
 Words are useful, but what's more useful are the sentences and stories we use them to build. 

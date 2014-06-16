@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
@@ -53,6 +54,171 @@
 <h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Times"><b>Monday Schedule</b></h2>
 <table cellspacing="0" cellpadding="0" class="t1">
   <tbody>
+=======
+---
+layout: bootcamp
+root: .
+venue: UC Davis
+address: UCDavis Shields Library
+country: United-States
+humandate: Jun 16-17, 2014
+humantime: 8:30 am - 5:00 pm
+startdate: 2014-06-16
+enddate: 2014-06-17
+latlng: 38.5397144,-121.7490892
+registration: restricted
+eventbrite: "11471139487"
+instructor: ["Naupaka Zimmerman", "Bernhard Konrad", "Dav Clark", "Andrea Zonca"]
+contact: admin@software-carpentry.org
+---
+<!--
+    Edit the values in the parameter block above to be appropriate for your bootcamp.
+    Please use three-letter month names for the 'humandate' field.
+-->
+
+
+<!--
+    This block includes the Eventbrite registration widget if 'eventbrite' has been set in the header.
+-->
+{% if page.eventbrite %}
+<iframe src="http://www.eventbrite.com/tickets-external?eid={{page.eventbrite}}&ref=etckt" frameborder="0" width="100%" scrolling="auto"></iframe>
+{% endif %}
+
+<h2>General Information</h2>
+
+<p>
+  <a href="http://software-carpentry.org">Software Carpentry</a>'s mission
+  is to help scientists and engineers become more productive
+  by teaching them basic lab skills for computing
+  like program design, version control, data management, and task automation.
+  This two-day hands-on bootcamp will cover basic concepts and tools;
+  participants will be encouraged to help one another
+  and to apply what they have learned to their own research problems.
+</p>
+
+<!-- This block displays the instructors' names if they are available. -->
+{% if page.instructor %}
+<p>
+  <strong>Instructors:</strong>
+  {{page.instructor | join: ', ' %}}
+</p>
+{% endif %}
+
+<!--
+    Modify this block to reflect the target audience for your bootcamp.
+    In particular, if it is only open to people from a particular institution,
+    or if specialized prerequisite knowledge is required, please mention that.
+-->
+<p>
+  <strong>Who:</strong>
+  The course is aimed at graduate students and other researchers.
+</p>
+
+<!--
+    This block displays the address and links to a map showing directions.
+-->
+{% if page.latlng %}
+<p>
+  <strong>Where:</strong>
+  {{ page.address }}.
+Get directions with <a href="http://maps.google.com/maps?q={{ page.latlng }}">Google Maps</a>. <a href="map-shields-2.png" target="new">Click here for Shield's Second Floor room map</a>. </p>
+{% endif %}
+
+<!--
+    Modify the block below if there are any special requirements.
+-->
+<p>
+  <strong>Requirements:</strong>
+  Participants must bring a laptop with a few specific software packages installed
+  (listed below).
+</p>
+
+<!--
+    This block automatically inserts a contact email address if one has been specified for the page.
+    If one hasn't, this block inserts the generic contact address for Software Carpentry.
+-->
+<p>
+  <strong>Contact</strong>:
+  Please mail
+  {% if page.contact %}
+    <a href='mailto:{{page.contact}}'>{{page.contact}}</a>
+  {% else %}
+    <a href='mailto:{{site.contact}}'>{{site.contact}}</a>
+  {% endif %}
+  for more information.
+</p>
+
+<hr/>
+
+<!--
+    Edit this block to show the syllabus and schedule for your bootcamp.
+-->
+<h2> Monday Schedule </h2>
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f0f0f0;}
+.tg .tg-0ord{text-align:right}
+.tg .tg-e3zv{font-weight:bold}
+.tg .tg-07dj{font-weight:bold;font-size:14px}
+</style>
+
+<table class="tg">
+  <tr>
+    <th class="tg-031e"></th>
+    <th class="tg-031e"><strong>Lannister Group @ Nelle Branch</strong><br />
+						<strong>Instructors:</strong> Naupaka and Andrea<br />
+						<strong>Helpers:</strong> Noam and Ciera<br />
+						<strong><a href="https://etherpad.mozilla.org/2014-06-16-Davis">Etherpad</a></strong>
+						</th>
+    <th class="tg-031e"><strong>Baratheon Group @ LIR</strong><br />
+						<strong>Instructors:</strong> Dav and Bernhard<br />
+						<strong>Helpers:</strong> Jonathan and Dave<br />
+                        <strong><a href="https://etherpad.mozilla.org/2014-06-16-Davis-R">Etherpad</a></strong>
+                        </th>
+  </tr>
+  <tr>
+    <td class="tg-0ord">8:30 - 9:00 am</td>
+    <td class="tg-031e">Setup help<br />Intro to the post-doc union and library</td>
+    <td class="tg-031e">Setup help<br />Intro to the post-doc union and library</td>
+  </tr>
+  <tr>
+    <td class="tg-0ord">9:00 - 10:15 am</td>
+    <td class="tg-e3zv">Basics of the R working environment and language</td>
+    <td class="tg-e3zv">Care and feeding of R objects, Functions</td>
+  </tr>
+  <tr>
+    <td class="tg-0ord">10:15 - 10:45 am</td>
+    <td class="tg-031e">coffee break</td>
+    <td class="tg-031e">coffee break</td>
+  </tr>
+  <tr>
+    <td class="tg-0ord">10:45 am - 12:00 pm</td>
+    <td class="tg-e3zv">Care and feeding of R objects, Functions</td>
+    <td class="tg-e3zv">Unit Testing/Code Coverage</td>
+  </tr>
+  <tr>
+    <td class="tg-0ord">12:00 - 1:00 pm</td>
+    <td class="tg-031e">lunch on your own</td>
+    <td class="tg-031e">lunch on your own</td>
+  </tr>
+  <tr>
+    <td class="tg-0ord">1:00 - 2:15 pm</td>
+    <td class="tg-e3zv">Writing functions, Intro to data munging</td>
+    <td class="tg-e3zv">Writing functions, Intro to data munging</td>
+  </tr>
+  <tr>
+    <td class="tg-0ord">2:15 - 2:45 pm</td>
+    <td class="tg-031e">light refreshments available</td>
+    <td class="tg-031e">light refreshments available</td>
+  </tr>
+  <tr>
+    <td class="tg-0ord">2:45 - 5:00 pm</td>
+    <td class="tg-e3zv">Making figures with ggplot2</td>
+    <td class="tg-07dj">Making figures with ggplot2</td>
+  </tr>
+>>>>>>> FETCH_HEAD
     <tr>
       <td valign="middle" class="td1">
         <p class="p6"><br></p>
@@ -286,6 +452,7 @@
     </tr>
   </tbody>
 </table>
+<<<<<<< HEAD
 <p class="p5"><br></p>
 <h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Times"><b>Setup</b></h2>
 <p class="p3">To participate in a Software Carpentry bootcamp, you will need working copies of the software described below. Please make sure to install everything <i>before</i> the start of your bootcamp.</p>
@@ -299,3 +466,50 @@
 <p class="p5"><br></p>
 </body>
 </html>
+=======
+
+<hr/>
+
+<!--
+    Edit the setup instructions in _includes/setup.html to reflect your bootcamp.
+    (In particular, most bootcamps teach either Python or R, not both.)
+-->
+
+<h2>Setup</h2>
+
+<p>
+  To participate in a Software Carpentry bootcamp, 
+  you will need working copies of the software described below.
+  Please make sure to install everything
+  <em>before</em> the start of your bootcamp.
+</p>
+
+<p>
+  TL;DR version: make sure you have the Bash shell, Git, R, and RStudio installed and working. For detailed instructions, go <a href="{{page.root}}/setup-ucd.html">here</a>.
+</p>
+
+<h4>The Bash Shell</h4>
+    <p>
+      Bash is a commonly-used shell. Using a shell gives you
+      more power to do more tasks more quickly with your
+      computer.
+    </p>
+
+<h4>Git</h4>
+    <p>
+      Git is a state-of-the-art version control system. It
+      lets you track who made changes to what when and has
+      options for easily updating a shared or public version of
+      your code on <a href="https://github.com/">github.com</a>.
+    </p>
+
+<h4>R</h4>
+    <p>
+      <a href="http://www.r-project.org">R</a> is a programming language that
+      is especially powerful for data exploration, visualization, and
+      statistical analysis. To interact with R, we will
+        use <a href="http://www.rstudio.com/">RStudio</a>, an interactive
+        development environment (IDE).
+      
+<hr/>
+>>>>>>> FETCH_HEAD
