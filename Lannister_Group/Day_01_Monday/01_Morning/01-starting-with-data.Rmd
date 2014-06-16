@@ -49,6 +49,9 @@ We will use `setwd()` and `read.csv()`. These are built-in functions in R. Let's
 * download the inflammation file
 * put it in your working directory for these exercises
 
+But before we do that, let's talk about how to format your data to load into R.
+
+
 ```{r, eval=FALSE}
 setwd("pathname")
 read.csv("data/inflammation-01.csv")
