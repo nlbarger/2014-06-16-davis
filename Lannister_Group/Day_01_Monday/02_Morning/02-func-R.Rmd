@@ -20,6 +20,7 @@ But we have twelve files to check, and may have more in future. In this lesson, 
 Let's start by defining a function `fahr_to_kelvin` that converts temperatures from Fahrenheit to Kelvin:
 
 ```{r}
+temp <- NA
 fahr_to_kelvin <- function(temp) {
     kelvin <- ((temp - 32) * (5/9)) + 273.15
 	kelvin
@@ -376,7 +377,7 @@ read.csv(file, header = TRUE, sep = ",", quote = "\"",
 This tells us that `read.csv` has one parameter called file that doesn't have a default value, and eight others that do. If we call the function like this:
 
 ```{r}
-read.csv('data/inflammation-01.csv', ',')
+read.csv('data/inflammation-01.csv')
 ```
 
 then the filename is assigned to name (which is what we want), but the delimiter string ',' is assigned to `header` rather than `sep`, because `header` is the second parameter in the list. That's why we don't have to provide `file=` for the filename, but do have to provide `sep=` for the second parameter.
