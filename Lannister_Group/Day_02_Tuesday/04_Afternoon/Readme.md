@@ -9,5 +9,4 @@
 7. Make a 2 histograms of global life expectancy using `ggplot`.  One with the default bin widths and one with narrower bin widths (you can check in the pdf from yesterday's lesson for the syntax you might need to do this). Explain the differences and any interesting trends in markdown text.
 8. Commit your changes and push them to github.
 9. Compile the final Rmd file to html, make sure it looks ok, and then commit this html file as well (should be in your working directory) and push everything to github.
-
-Testing *italic* and **bold**.
+testing _italic_ and **bold**
